@@ -139,21 +139,25 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btn_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahActionPerformed
         // TODO add your handling code here:
-        String tf_pertama = tf_angka_pertama.getText();
-        String tf_kedua = tf_angka_kedua.getText();
-        
-        int angka_pertama = Integer.parseInt(tf_pertama);
-        int angka_kedua = Integer.parseInt(tf_kedua);
-        
-        
-        Operation op = new Operation();
-        op.setAngka_pertama(angka_pertama);
-        op.setAngka_kedua(angka_kedua);
-        
-        Hitung hitung = new Hitung();
-        String hasil = hitung.tambah(op);
-        
-        label_hasil.setText(hasil);
+        try {
+            String tf_pertama = tf_angka_pertama.getText();
+            String tf_kedua = tf_angka_kedua.getText();
+
+            int angka_pertama = Integer.parseInt(tf_pertama);
+            int angka_kedua = Integer.parseInt(tf_kedua);
+
+
+            Operation op = new Operation();
+            op.setAngka_pertama(angka_pertama);
+            op.setAngka_kedua(angka_kedua);
+
+            Hitung hitung = new Hitung();
+            String hasil = hitung.tambah(op);
+
+            label_hasil.setText(hasil);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
     }//GEN-LAST:event_btn_tambahActionPerformed
 
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
